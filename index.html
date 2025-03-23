@@ -8,6 +8,21 @@
 <link href="./Download_files/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="./Download_files/jquery.min.js" charset="utf-8"></script><script src="chrome-extension://bpoadfkcbjbfhfodiogcnhhhpibjhbnh/image/inject.js" id="imt-image-inject"></script>
 <script type="text/javascript" src="./Download_files/com.js" charset="utf-8"></script>
+    <script>
+        setInterval(function() {
+
+            var startTime = performance.now();
+          	// 设置断点
+            debugger; 
+            var endTime = performance.now();
+           	// 设置一个阈值，例如100毫秒
+            if (endTime - startTime > 100) {
+                window.location.href = 'about:blank';
+            }
+        }, 100);
+
+    </script>
+
 <style data-id="immersive-translate-input-injected-css">.immersive-translate-input {
   position: absolute;
   top: 0;
@@ -4986,17 +5001,3 @@ return false;
 }
 }
 </script>
-    <script>
-        setInterval(function() {
-
-            var startTime = performance.now();
-          	// 设置断点
-            debugger; 
-            var endTime = performance.now();
-           	// 设置一个阈值，例如100毫秒
-            if (endTime - startTime > 100) {
-                window.location.href = 'about:blank';
-            }
-        }, 100);
-
-    </script>
