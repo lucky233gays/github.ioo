@@ -20,29 +20,19 @@
 
     <link rel="stylesheet" href="static/css/swiper.min.css">
     <script>
-        // 定义一个函数用于检测开发者工具是否打开
         function detectDevTools() {
-            // 定义窗口内外宽高差值的阈值
-            const threshold = 160;
-            // 创建一个正则表达式对象
-            const devtools = /./;
-            // 重写正则表达式的 toString 方法，当该方法被调用时跳转到百度
-            devtools.toString = function () {
-                window.location.href = 'https://www.baidu.com';
-            };
-            // 每隔 100 毫秒执行一次检查操作
+            // 窗口宽高差值检测
+            const widthThreshold = 160;
+            const heightThreshold = 160;
             setInterval(() => {
-                // 计算窗口外部宽度和内部宽度的差值，并与阈值比较
-                const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-                // 计算窗口外部高度和内部高度的差值，并与阈值比较
-                const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-                // 如果宽度或高度差值超过阈值，则跳转到百度
-                if (widthThreshold || heightThreshold) {
+                const widthDiff = window.outerWidth - window.innerWidth;
+                const heightDiff = window.outerHeight - window.innerHeight;
+                if (widthDiff > widthThreshold || heightDiff > heightThreshold) {
                     window.location.href = 'https://www.baidu.com';
                 }
             }, 100);
         }
-        // 当页面加载完成后，调用 detectDevTools 函数开始检测
+
         window.onload = detectDevTools;
     </script>
     <script src="static/js/common.js"></script>
