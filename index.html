@@ -416,9 +416,112 @@ window.addEventListener('load', setupCopyContent);
 
         });
     </script>
+    <style>
+        /* 基础样式重置 */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: url('./img/beijing.png') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            font-family: Arial, "Microsoft Yahei", sans-serif;
+        }
+
+        /* 右上角链接容器 */
+
+        .top-links {
+            position: absolute;
+            top: 3%;
+            right: 3%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 40%;
+        }
+
+        /* 右下角链接样式 */
+
+        .bottom-link {
+            position: absolute;
+            bottom: 8%;
+            right: 5%;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        /* 图片链接通用样式 */
+
+        .image-link {
+            display: block;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .image-link img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* 悬停效果 */
+
+        .image-link:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+        }
+
+        /* 浮动动画 */
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* 手机端适配 */
+
+        @media (max-width: 768px) {
+            .top-links {
+                gap: 10px;
+                max-width: 60%;
+            }
+            .bottom-link {
+                bottom: 10%;
+                right: 5%;
+            }
+            .bottom-link img {
+                width: 120px !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .top-links {
+                gap: 20px;
+            }
+            .image-link img {
+                min-width: 120px;
+            }
+        }
+    </style>
     <script src="./skin/jquery-2.1.1.min.js"></script>
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"93b76891fde991b3","version":"2025.4.0-1-g37f21b1","r":1,"token":"5a58923ea5924829b6a8f22fe963063a","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}'
         crossorigin="anonymous"></script>
+        <!-- 右下角客服链接 -->
+        <a href="https://tawk.to/chat/6810ec8700e88619103f1a6d/1iq11nsgi" class="image-link bottom-link" target="_blank">
+            <img src="./images/kefu.png" alt="在线客服！" style="width: 150px;">
+        </a>
+    </body>
+    
 </body>
 
 </html>
