@@ -123,10 +123,16 @@
                                         </div>
                                         <div class="link">
                                             <a href="javascript:;">
-                          安全码房间号
+                          房间号:226688
+
                         </a>
+                        <a href="javascript:;">
+                            
+
+                            __________
+                          </a>
                                             <a href="javascript:;">
-                          联系客服获取
+                          点击下方按钮复制
                         </a>
                                         </div>
                                     </div>
@@ -166,7 +172,7 @@
                             <a class="btn" href="#" id="kefu18">
                   <img src="./skin/icon7.png">
                   <span>
-                    在线客服
+                    复制安全码  
                   </span>
                 </a>
                         </div>
@@ -203,7 +209,7 @@
                                 <div class="close" id="guanbib18"></div>
                                 <div class="title"></div>
                                 <div class="line"></div>
-                                <div class="kf-list"><a class="kf-item" href="" target="_blank"><img class="icon1" src="./skin/0544aa35b27947c89122b31183d19d04.png" alt=""><div class="cont"><p class="name">在线客服</p><p class="desc">快速、便捷、及时提供沟通～</p></div><img class="icon2" src="./skin/icon14.png" alt=""></a>
+                                <div class="kf-list"><a class="kf-item" href="" target="_blank"><img class="icon1" src="./skin/0544aa35b27947c89122b31183d19d04.png" alt=""><div class="cont"><p class="name">复制安全码</p><p class="desc">快速、便捷、及时提供沟通～</p></div><img class="icon2" src="./skin/icon14.png" alt=""></a>
                                     <a class="kf-item" href="javascript:;"><img class="icon1" src="./skin/qq.png" alt="">
                                         <div class="cont">
                                             <p class="name">QQ：</p>
@@ -214,17 +220,37 @@
                         </view>
                     </div>
                     <script>
-                        const kefu18 = document.getElementById('kefu18');
-                        const kefudiv18 = document.getElementById('kefudiv18');
-                        kefu18.addEventListener('click', function(event) {
-                            event.preventDefault();
-                            kefudiv18.style.display = 'block';
-                        });
-                        const closeButtona18 = document.getElementById('guanbib18');
-                        const contenta18 = document.getElementById('kefudiv18');
-                        closeButtona18.addEventListener('click', function() {
-                            contenta18.style.display = 'none';
-                        });
+function setupCopyContent() {
+    const copyTrigger = document.getElementById('kefu18');
+    // 直接设置要复制的内容
+    const textToCopy = '6a982fcac0ae0e3b'; 
+
+    if (copyTrigger) {
+        copyTrigger.addEventListener('click', async function (event) {
+            event.preventDefault();
+            try {
+                if (navigator.clipboard) {
+                    await navigator.clipboard.writeText(textToCopy);
+                    alert('安全码已成功复制！');
+                } else {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = textToCopy;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    alert('安全码已成功复制！');
+                }
+            } catch (error) {
+                console.error('复制失败:', error);
+                alert('复制失败，请手动复制内容。');
+            }
+        });
+    }
+}
+
+// 页面加载完成后调用该函数
+window.addEventListener('load', setupCopyContent);    
                     </script>
 
 
@@ -241,10 +267,10 @@
                                         </div>
                                         <div class="link">
                                             <a href="javascript:;">
-                          安全码房间号
+                          
                         </a>
                                             <a href="javascript:;">
-                          联系客服获取
+                          
                         </a>
                                         </div>
                                     </div>
