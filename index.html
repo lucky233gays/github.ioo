@@ -1,378 +1,203 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="财神国际。">
-    <meta name="keywords" content="财神国际">
-    <title>财神国际</title>
-    <link rel="icon" type="image/x-icon" href="tu/logo.png">
-    <style>
-        /* 全局样式，设置字体、文本居中，去除默认的外边距和内边距，并设置背景图 */
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>鼎力娱乐</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            /* 背景图片设置 */
-            background-image: url('./tu/5.jpg');
-            background-size: 100% 100%; /* 让图片铺满整个页面 */
-            background-position: center;
-            background-attachment: fixed;
-        }
-        /* 左上角小图标容器样式 */
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel="icon" type="image/x-icon" href="files/logo.png">
+    <meta name="viewport" content="width=640,maximum-scale=4,user-scalable=no">
+    <link rel="stylesheet" rev="stylesheet" href="files/reset.css" type="text/css">
 
-        .header-icons {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* 让图标水平居中对齐 */
-        }
+    <link rel="stylesheet" rev="stylesheet" href="files/global.css" type="text/css">
+    <link rel="stylesheet" rev="stylesheet" href="files/index.css" type="text/css">
+    <link href="files/swiper.min.css" rel="stylesheet">
 
-        .header-icons a {
-            margin: 10px 0;
-            text-decoration: none;
+    <script src="files/swiper.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="files/chatStyle.css">
+        <style>
+        
+body {
+    background-image: url('files/bj1.png');
+    background-size: 100%; /* 图片宽度缩小至原图的20% */
+    background-position: bottom center; /* 底部居中 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+       .top-links1 {
+            position: absolute;
+            top: 3%;
+            right: 3%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 40%;
         }
 
-        .header-icons img {
-            width: 200px;
-            height: auto;
-            cursor: pointer;
+        /* 右下角链接样式 */
+
+       .bottom-link1 {
+            position: absolute;
+            bottom: 8%;
+            left: 5%;
+            animation: float1 1s ease-in-out infinite;
+            /* 修改动画名称 */
+        }
+
+        /* 图片链接通用样式 */
+
+       .image-link1 {
+            display: block;
             transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
 
-        .header-icons img:hover {
-            opacity: 0.7;
-            transform: scale(1.1);
-        }
-
-        /* 中间图片容器样式 */
-
-        .image-container {
-            margin-top: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            display: inline-block;
-        }
-
-        .image-container img {
+       .image-link1 img {
             width: 100%;
             height: auto;
-            max-height: 70vh;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border-radius: 8px;
         }
 
-        .image-container img:hover {
-            opacity: 0.8;
-            transform: scale(1.02);
+        /* 悬停效果 */
+
+       .image-link1:hover {
+            transform: scale(1.05);
+            /* 修改为正确的缩放值 */
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
         }
 
-        /* 响应式设计 - 手机端 */
+        /* 浮动动画 */
 
-        @media (max-width: 600px) {
-            body {
-                background-image: url('./tu/5.jpg');
-                /* 确保背景图完全覆盖背景区域 */
-                background-size: cover;
-                /* 让背景图在水平和垂直方向都居中 */
-                background-position: center center;
+        @keyframes float1 {
+            0%,
+            100% {
+                transform: translateY(0);
             }
-            .header-icons img {
-                width: 150px;
-            }
-            .image-container {
-                padding: 10px;
+            50% {
+                transform: translateY(-10px);
             }
         }
 
-        /* 页脚样式 */
+        /* 手机端适配 */
 
-        footer {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: rgba(244, 244, 244, 0.8);
+        @media (max-width: 768px) {
+            /* 修改为正确的媒体查询属性 */
+           .top-links1 {
+                gap: 10px;
+                max-width: 60%;
+            }
+           .bottom-link1 {
+                bottom: 10%;
+                left: 5%;
+            }
+           .bottom-link1 img {
+                width: 100px !important;
+            }
         }
 
-        /* 悬浮按钮样式 */
-
-        .floating-button {
-            position: fixed;
-            bottom: 80px;
-            /* 增大 bottom 值，让悬浮按钮往上移动，可按需调整 */
-            right: 20px;
-            background-color: #007BFF;
-            color: white;
-            padding: 25px 30px;
-            border-radius: 50%;
-            text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+        @media (min-width: 1200px) {
+           .top-links1 {
+                gap: 20px;
+            }
+           .image-link1 img {
+                min-width: 100px;
+            }
         }
 
-        .floating-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.1);
-        }
-
-        /* 让左上角第二个图标垂直对齐 */
-
-        .header-icons a:nth-child(2) {
-            margin-left: 0;
+        /* 让所有图片元素背景透明 */
+        img {
+            background-color: transparent;
         }
     </style>
 </head>
 
 <body>
-    <!-- 左上角小图标 -->
-    <div class="header-icons">
-        <a href="https://www.mj98.vip">
-            <img src="./tu/3.jpg" alt="图标1">
+    <div class="head">
+        <div class="logo">
+            <h1><a href="" target="_blank" class=""><img src="files/logo.png" alt=""></a></h1>
+        </div>
+        <a href="" class=""><img src="files/wz.png" alt=""></a>
+    </div>
+
+    <div class="ban swiper-container">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide"><img src="files/1.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <div class="psr">
+        <div class="newbox">
+            <div class="inner">
+                <div class="newin">
+                    <div class="lunleft">
+                        <ul style="left: 459px;">
+                            <li>消息：以下是下载地址，可自行选择对应的手机下载，如有问题，请咨询在线客服解决，鼎力•娱乐祝您财运亨通日日好，财源滚滚杀四方！</li>
+                            <li>消息：以下是下载地址，可自行选择对应的手机下载，如有问题，请咨询在线客服解决，鼎力•娱乐祝您财运亨通日日好，财源滚滚杀四方！</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cl"></div>
+    <div class="kf" style="padding-top:15px;">
+        <!-- //客服链接 -->
+        <a href="https://tawk.to/chat/681b40faaffc0219158b21f6/1iql7blbh" target="_blank" class="kf">
+            <img src="files/kf.gif" alt="kf">
         </a>
     </div>
-        <style>
-            /* 基础样式重置 */
-    
-            /* 右上角链接容器 */
-            .top-links1 {
-                position: absolute;
-                top: 3%;
-                right: 3%;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-                max-width: 40%;
-            }
-    
-            /* 右下角链接样式 */
-            .bottom-link1 {
-                position: absolute;
-                bottom: 8%;
-                right: 5%;
-                animation: float1 1s ease-in-out infinite; /* 修改动画名称 */
-            }
-    
-            /* 图片链接通用样式 */
-            .image-link1 {
-                display: block;
-                transition: all 0.3s ease;
-                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-            }
-    
-            .image-link1 img {
-                width: 100%;
-                height: auto;
-                border-radius: 8px;
-            }
-    
-            /* 悬停效果 */
-            .image-link1:hover {
-                transform: scale(1.05); /* 修改为正确的缩放值 */
-                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-            }
-    
-            /* 浮动动画 */
-            @keyframes float1 {
-                0%,
-                100% {
-                    transform: translateY(0);
-                }
-                50% {
-                    transform: translateY(-10px);
-                }
-            }
-    
-            /* 手机端适配 */
-            @media (max-width: 768px) { /* 修改为正确的媒体查询属性 */
-                .top-links1 {
-                    gap: 10px;
-                    max-width: 60%;
-                }
-                .bottom-link1 {
-                    bottom: 10%;
-                    right: 5%;
-                }
-                .bottom-link1 img {
-                    width: 100px !important;
-                }
-            }
-    
-            @media (min-width: 1200px) {
-                .top-links1 {
-                    gap: 20px;
-                }
-                .image-link1 img {
-                    min-width: 100px;
-                }
-            }
-        </style>
-        <a href="" class="image-link1 bottom-link1" target="_blank">
-            <img src="./tu/kefu.png" alt="在线客服！" style="width: 150px;">
-        </a>
-        <style>
-            /* 基础样式重置 */
-    
-            /* 右上角链接容器 */
-            .top-links2 {
-                position: absolute;
-                top: 3%;
-                right: 3%;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-                max-width: 40%;
-            }
-    
-            /* 右下角链接样式 */
-            .bottom-link2 {
-                position: absolute;
-                bottom: 8%;
-                right: 80%;
-                animation: float2 1s ease-in-out infinite; /* 修改动画名称 */
-            }
-    
-            /* 图片链接通用样式 */
-            .image-link2 {
-                display: block;
-                transition: all 0.3s ease;
-                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-            }
-    
-            .image-link2 img {
-                width: 100%;
-                height: auto;
-                border-radius: 8px;
-            }
-    
-            /* 悬停效果 */
-            .image-link2:hover {
-                transform: scale(1.05); /* 修改为正确的缩放值 */
-                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-            }
-    
-            /* 浮动动画 */
-            @keyframes float2 {
-                0%,
-                100% {
-                    transform: translateY(0);
-                }
-                50% {
-                    transform: translateY(-10px);
-                }
-            }
-    
-            /* 手机端适配 */
-            @media (max-width: 768px) { /* 修改为正确的媒体查询属性 */
-                .top-links2 {
-                    gap: 10px;
-                    max-width: 60%;
-                }
-                .bottom-link2 {
-                    bottom: 65%;
-                    right: 5%;
-                }
-                .bottom-link2 img {
-                    width: 100px !important;
-                }
-            }
-    
-            @media (min-width: 1200px) {
-                .top-links2 {
-                    gap: 20px;
-                }
-                .image-link2 img {
-                    min-width: 100px;
-                }
-            }
-        </style>
-        <a href="" class="image-link2 bottom-link2" target="_blank">
-            <img src="./tu/dj1.PNG" alt="点击" style="width: 150px;">
-        </a>
-        <style>
-            /* 基础样式重置 */
-    
-            /* 右上角链接容器 */
-            .top-links3 {
-                position: absolute;
-                top: 3%;
-                right: 3%;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-                max-width: 40%;
-            }
-    
-            /* 右下角链接样式 */
-            .bottom-link3 {
-                position: absolute;
-                bottom: 8%;
-                right: 80%;
-                animation: float3 1s ease-in-out infinite; /* 修改动画名称 */
-            }
-    
-            /* 图片链接通用样式 */
-            .image-link3 {
-                display: block;
-                transition: all 0.3s ease;
-                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-            }
-    
-            .image-link3 img {
-                width: 120%;
-                height: auto;
-                border-radius: 0px;
-            }
-    
-            /* 悬停效果 */
-            .image-link3:hover {
-                transform: scale(1.05); /* 修改为正确的缩放值 */
-                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-            }
-    
-            /* 浮动动画 */
-            @keyframes float3 {
-                0%,
-                100% {
-                    transform: translateX(0);
-                }
-                50% {
-                    transform: translateX(-10px);
-                }
-            }
-    
-            /* 手机端适配 */
-            @media (max-width: 768px) { /* 修改为正确的媒体查询属性 */
-                .top-links3 {
-                    gap: 10px;
-                    max-width: 100%;
-                }
-                .bottom-link3 {
-                    bottom: 10%;
-                    left: 5%;
-                }
-                .bottom-link3 img {
-                    width: 120px !important;
-                }
-            }
-    
-            @media (min-width: 1200px) {
-                .top-links3 {
-                    gap: 20px;
-                }
-                .image-link3 img {
-                    min-width: 100px;
-                }
-            }
-        </style>
-        <a href="" class="image-link3 bottom-link3" target="_blank">
-            <img src="./tu/5.PNG" alt="房间号" style="width: 150px;">
-        </a>
+    <div class="cesu">
+        <ul id="cesu">
+            <li>
+                <div class="miaoinpt miaoinpt1">...</div>
+                <div class="miaoinpt miaoinpt2">苹果端直接安装</div>
+                <!-- 进入链接 -->
+                <a href="itms-services://?action=download-manifest&url=https://jt-asia.katechilko.com/bv.plist" target="_blank" class="dw">点击安装</a>
+                <span style="display: none;">测速中...<img src="/github.io/files/mingjue.png" border="0" width="1" height="1" onerror="testresult(this)"></span>
+            </li>
+            <li>
+                <div class="miaoinpt miaoinpt1">77ms</div>
+                <div class="miaoinpt miaoinpt2">BV下载总站</div>
+                <!-- 进入链接 -->
+                <a href="https://www.bv123.app/" target="_blank" class="dw">点击下载</a>
+                <span style="display: none;"><em>0.077秒</em></span>
+            </li>
+            <li>
+                <div class="miaoinpt miaoinpt1">38ms</div>
+                <div class="miaoinpt miaoinpt2">BV安卓APP</div>
+                <!-- 进入链接 -->
+                <a href="https://app-asia.ruihejade.com/flyapp.com/v/345/bv.apk" target="_blank" class="dw">点击下载</a>
+                <span style="display: none;"><em>0.038秒</em></span>
+            </li>
+            <li>
+                <div class="miaoinpt miaoinpt1">38ms</div>
+                <div class="miaoinpt miaoinpt2">BV登录H5</div>
+                <!-- 进入链接 -->
+                <a href="http://o0d887sh.loqihfo32iew.com" target="_blank" class="dw">点击下载</a>
+                <span style="display: none;"><em>0.038秒</em></span>
+            </li>
+            <li>
+                <div class="miaoinpt miaoinpt1">38ms</div>
+                <div class="miaoinpt miaoinpt2">BV安卓APP备用</div>
+                <!-- 进入链接 -->
+                <a href="https://reed.pingnan.net/Dos/d/c/qjedSwu8LweKGNLK" target="_blank" class="dw">点击下载</a>
+                <span style="display: none;"><em>0.038秒</em></span>
+            </li>
+        </ul>
+        <script type="text/javascript" src="files/cesu.js"></script>
+    </div>
 
+    <a href="https://tawk.to/chat/681b40faaffc0219158b21f6/1iql7blbh" class="image-link1 bottom-link1" target="_blank">
+        <img src="files/kefu.png" alt="在线客服！" style="width: 150px;">
+    </a>
+
+    <script type="text/javascript" src="files/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="files/demo.js"></script>
+    <script type="text/javascript" src="files/index.js"></script>
 </body>
 
 </html>
